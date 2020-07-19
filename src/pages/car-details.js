@@ -7,24 +7,24 @@ const CarDetails = (props) => {
   const idCar = props.match.params.id;
   const url = `http://localhost:4000/cars/${idCar}`;
 
-  const [title, setTitle] = useState("");
-  const [model, setModel] = useState("");
-  const [brand, setBrand] = useState("");
-  const [year, setYear] = useState("");
-  const [color, setColor] = useState("");
-  const [km, setKm] = useState("");
-  const [price, setPrice] = useState("");
+  // const [title, setTitle] = useState("");
+  // const [model, setModel] = useState("");
+  // const [brand, setBrand] = useState("");
+  // const [year, setYear] = useState("");
+  // const [color, setColor] = useState("");
+  // const [km, setKm] = useState("");
+  // const [price, setPrice] = useState("");
   const [msgSuccess, setMsgSuccess] = useState(false)
   const [msgError, setMsgError] = useState(false)
 
-  // const [car, setCar] = useState({
-  //   title: "",
-  //   model: "",
-  //   year: "",
-  //   color: "",
-  //   km: "",
-  //   price: "",
-  // });
+  const [car, setCar] = useState({
+    title: "",
+    model: "",
+    year: "",
+    color: "",
+    km: "",
+    price: "",
+  });
 
 
   const handleDelete = () => {
@@ -33,89 +33,97 @@ const CarDetails = (props) => {
     .catch(err => console.log('não deletou'))
 }
 
+const handleChange = (e) => {
+  let value = e.target.value
+  setCar({
+    ...car,
+    [e.target.name]: value,
+  });
+  console.log(value, 'value')
+}
+
   useEffect(() => {
     axios
       .get(url)
       .then((res) => {
-        setTitle(res.data.title);
-        setModel(res.data.model);
-        setBrand(res.data.brand);
-        setYear(res.data.year);
-        setColor(res.data.color);
-        setKm(res.data.km);
-        setPrice(res.data.price);
+        setCar(res.data);
       })
       .catch((error) => console.log("erro na chamada"));
 
-  });
+  }, []);
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.put(url, {title, model, brand, year, color, km})
-    .then((res) => {setMsgSuccess(true)})
+    axios.put(url, car)
+    .then((res) => { {setMsgSuccess(true)} 
+    setTimeout(() => {
+      props.history.push('/')
+    }, 2000);
+  })
     .catch((err) => {console.log(err)})
   }
 
+console.log(car.title, 'car title')
 
   return (
     <div className="main-home">
       <h1>Car</h1>
       <form>
         <input
-        placeholder="title"
-        id="title"
+          id="title"
           type="text"
           name="title"
-          value={title} 
-          onChange={(e) => console.log(setTitle(e.target.value))}
+          value={car.title}
+          onChange={(e) => handleChange(e)}
           required
         />
 
         <input
           type="text"
           name="brand"
-          value={brand}
+          value={car.brand}
           required
-          onChange={(e) => setBrand(e.target.value)}
+          onChange={handleChange}
         />
 
         <input
           type="text"
           name="year"
-          value={year}
+          value={car.year}
           required
-          onChange={(e) => setYear(e.target.value)}
+          onChange={handleChange}
         />
           <input
           type="text"
           name="model"
-          value={model}
+          value={car.model}
           required
-          onChange={(e) => setModel(e.target.value)}
+          onChange={handleChange}
         />
 
         <input
           type="text"
           name="color"
-          value={color}
+          value={car.color}
           required
-          onChange={(e) => setColor(e.target.value)}
+          onChange={handleChange}
         />
 
         <input
           type="text"
           name="price"
-          value={price}
+          value={car.price}
           required
-          onChange={(e) => setPrice(e.target.value)}
+          onChange={handleChange}
         />
 
         <input
           type="text"
           name="km"
-          value={km}
+          value={car.km}
           required
-          onChange={(e) => setKm(e.target.value)}
+          onChange={handleChange}
         />
         
         <div>
