@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:wght@400;700&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+:root {
+    --color-primary: #1a2533;
+    --color-primary-dark:  #0e1823;
+    
+    --white: #fff;
+
+    --primary-grey: #8d8d8d;
+  
+    }
+
+    html {
+        font-size: 62.5%; //1rem = 10px
+
+        a, a:visited {
+            text-decoration: none;
+        }
+    }
+
+body {
+    background-color: var(--color-primary);
+    color:#f5f5f5;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    width: 100%;
+}
+
+
+//media query 
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        @media (max-width: 37.5em) { @content }; 
+    }
+    @if $breakpoint == tab-port {
+        @media (min-width: 37.6em) { @content }; 
+    }
+    @if $breakpoint == tab-land {
+        @media (max-width: 75em) { @content }; 
+    }
+    @if $breakpoint == big-desktop {
+        @media (min-width: 112.5em) { @content }; 
+    }
+}

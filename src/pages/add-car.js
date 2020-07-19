@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "../assets/styles/Shared.css";
 import axios from "axios";
+import SearchBar from "../components/search-bar";
 
 
 const AddCar = () => {
@@ -14,13 +14,6 @@ const AddCar = () => {
     price: "",
   });
 
-  // const [title, setTitle] = useState("");
-  // const [model, setModel] = useState("");
-  // const [brand, setBrand] = useState("");
-  // const [year, setYear] = useState("");
-  // const [color, setColor] = useState("");
-  // const [km, setKm] = useState("");
-  // const [price, setPrice] = useState("");
   const [msgSuccess, setMsgSuccess] = useState(false)
 
   const handleSubmit = (e) => {
@@ -45,6 +38,7 @@ const AddCar = () => {
 
   return (
     <div className="main-home">
+    <SearchBar />
       <h1>Adicionar novo Carro</h1>
       <form>
         <input

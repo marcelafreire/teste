@@ -1,9 +1,8 @@
 import React from "react";
-import "../assets/styles/Shared.css";
 
 const SearchBar = ({ cars, handleSearch, search }) => {
   return (
-      <header>
+      <header className="home__content__searchbar">
         <input
           type="text"
           name="search"

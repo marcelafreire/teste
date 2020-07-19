@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "../assets/styles/Shared.css";
 import axios from "axios";
 
 
@@ -7,13 +6,6 @@ const CarDetails = (props) => {
   const idCar = props.match.params.id;
   const url = `http://localhost:4000/cars/${idCar}`;
 
-  // const [title, setTitle] = useState("");
-  // const [model, setModel] = useState("");
-  // const [brand, setBrand] = useState("");
-  // const [year, setYear] = useState("");
-  // const [color, setColor] = useState("");
-  // const [km, setKm] = useState("");
-  // const [price, setPrice] = useState("");
   const [msgSuccess, setMsgSuccess] = useState(false)
   const [msgError, setMsgError] = useState(false)
 

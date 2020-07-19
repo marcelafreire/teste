@@ -1,28 +1,30 @@
 import React from "react";
-import "../assets/styles/Shared.css";
 import { Link } from "react-router-dom";
 
 const CarSeachList = ({ cars, handleSearch, search }) => {
   return (
     <>
       {search === "" ? (
-        <div className="banner">
-          <h2>Pesquisa de veículos do TradersClub</h2>
+        <div className="home__content__banner">
+          <h1>Pesquisa de veículos do TradersClub</h1>
         </div>
       ) : (
-        <div className="banner">
+        <div className="home__content__car-list">
           {cars
             .filter((car) => car.title.toLowerCase().includes(search))
             .map((car) => {
               return (
                 <div key={car.id}>
-                  <Link to={`/car/${car.id}`}>
-                  <div>
-                    <h3>{car.title}</h3>
-                    <p>{car.model} • {car.brand} • {car.km}</p>
+                  <Link to={`/car/${car.id}`} className="search-list">
+                    <div className="search-list__group" >
+                      <h3>{car.title}</h3>
+                      <p>{car.model} • {car.brand} • {car.km}
+                      </p>
                     </div>
-                    <div>
-                      <h3>{car.price}</h3>
+
+                    <div className="search-list__group2">
+                      <h3>price{car.price}</h3>
+                      <p>{car.year}</p>
                     </div>
                   </Link>
                 </div>
@@ -30,7 +32,7 @@ const CarSeachList = ({ cars, handleSearch, search }) => {
             })}
         </div>
       )}
-      </>
+    </>
   );
 };
 

@@ -1,0 +1,151 @@
+@import "base";
+
+.home {
+  display: flex;
+  margin: 0;
+  text-align: center;
+  min-height: 100vh;
+
+  &__side-bar {
+    background-color: var(--color-primary-dark);
+    width: 20%;
+    margin: 0;
+
+    img {
+      margin-top: 5rem;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;    
+
+    &__banner {
+      height: 87vh;
+      background-image: linear-gradient(to right bottom, #041124e3 , #040d1de0),
+        url(../img/car-wireframe.png);
+      background-size: cover;
+      background-position: top;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      h1 {
+        padding-top: 3rem;
+        font-family: "Lobster Two", cursive;
+        font-weight: 500;
+        font-size: 100px;
+        color: white;
+        width: 60%;
+        text-align: center;
+      }
+    }
+
+    &__car-list {
+      height: 84vh;
+      display: flex;
+      flex-direction:column;
+      margin-top: 2rem;
+      background-image: linear-gradient(to right bottom, #041124e3 , #040d1de0),
+      url(../img/car-wireframe.png);
+    background-size: cover;
+    background-position: top;
+
+      .search-list {
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        line-height: 0.5px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+        height: 8rem;
+        color: var(--white);
+        width: 86%;
+        margin: 0.2rem 5%;
+        padding: 0.4rem 2rem 0.4rem 2rem;
+
+        &__group {
+          text-align: left;
+          display: flex;
+          justify-content: flex-start;
+          flex-direction: column;
+          width: 50%;
+        }
+
+        &__group2 {
+          text-align: right;
+          display: flex;
+          justify-content: flex-end;
+          flex-direction: column;
+          width: 50%;
+        }
+
+
+        h3 {
+          color: var(--white);
+          text-decoration: none;
+          font-size: 1.6rem;
+
+        }
+        p {
+          font-size: 1.2rem;
+          font-weight: 400;
+        }
+
+        a, a:visited {
+          color:white;
+          text-decoration: none;
+        }
+      }
+    }
+
+    &__searchbar {
+      background-color: car(--color-primary);
+      display: flex;
+      height: 7rem;
+      margin: 1.5rem 0;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+
+      input {
+        background-color: var(--color-primary);
+        border: solid 1px var(--primary-grey);
+        outline: none;
+        border-radius: 3px;
+        width: 70rem;
+        height: 3.2rem;
+        padding-left: 1rem;
+        margin-right: 0.8rem;
+        font-weight: 500;
+        color: #adadad;
+      }
+      button {
+        height: 3.4rem;
+        background-color: white;
+        border-style: none;
+        border-radius: 2px;
+        width: 9rem;
+      }
+    }
+  }
+}
+
+.banner {
+  height: 80%;
+  width: 100%;
+}
+
+.banner::after {
+  content: "";
+  background: url("../img/car-wireframe.png") no-repeat center;
+  opacity: 0.1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
