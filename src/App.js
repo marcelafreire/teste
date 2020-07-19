@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Switch} from 'react-router-dom';    
 import Home from "./pages/home";
 import CarDetails from "./pages/car-details";
+import AddCar from "./pages/add-car";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         </div>
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/car/add" component={AddCar} />
           <Route exact path="/car/:id" component={CarDetails}  />
         </Switch>
       </div>

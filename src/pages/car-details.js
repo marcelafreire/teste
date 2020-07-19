@@ -14,6 +14,18 @@ const CarDetails = (props) => {
   const [color, setColor] = useState("");
   const [km, setKm] = useState("");
   const [price, setPrice] = useState("");
+  const [msgSuccess, setMsgSuccess] = useState(false)
+  const [msgError, setMsgError] = useState(false)
+
+  // const [car, setCar] = useState({
+  //   title: "",
+  //   model: "",
+  //   year: "",
+  //   color: "",
+  //   km: "",
+  //   price: "",
+  // });
+
 
   const handleDelete = () => {
     axios.delete(url)
@@ -37,16 +49,26 @@ const CarDetails = (props) => {
 
   });
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios.put(url, {title, model, brand, year, color, km})
+    .then((res) => {setMsgSuccess(true)})
+    .catch((err) => {console.log(err)})
+  }
+
+
   return (
     <div className="main-home">
       <h1>Car</h1>
-      <form onSubmit={handleSubmit}>
+      <form>
         <input
+        placeholder="title"
+        id="title"
           type="text"
           name="title"
-          value={title}
+          value={title} 
+          onChange={(e) => console.log(setTitle(e.target.value))}
           required
-          onChange={(e) => setTitle(e.target.value)}
         />
 
         <input
@@ -104,9 +126,19 @@ const CarDetails = (props) => {
         <div>
         <button onClick={handleSubmit}>Salvar</button>
         </div>
-
-
       </form>
+
+      {msgSuccess && (
+              <span className="login__error" data-testid="user-error">
+                Dados atualizados com sucesso!
+              </span>
+            )}
+            {msgError && (
+              <span className="login__error" data-testid="req-error">
+                Dados inválidos
+              </span>
+            )}
+
     </div>
   );
 };
