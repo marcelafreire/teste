@@ -4,10 +4,21 @@
       "title": "Celta Preto 2003",
       "model": "Celta",
       "brand": "Chevrolet",
+      "year": 2003,
+      "color": "Preta",
+      "km": 20.9022,
+      "id": 2,
+      "price": 7500
+    },
+    {
+      "title": "Celta Preto 2005 - Básico",
+      "model": "Celta",
+      "brand": "Chevrolet",
       "year": 2005,
       "color": "Preta",
-      "km": 209022,
-      "id": 2
+      "km": 21.902,
+      "id": 2,
+      "price": 8000
     },
     {
       "id": 3,
@@ -17,7 +28,7 @@
       "year": 2008,
       "color": "Prata",
       "km": 60932666,
-      "price": 9999.22
+      "price": 12800
     },
     {
       "id": 4,
@@ -26,28 +37,38 @@
       "brand": "Volkswagen",
       "year": 2000,
       "color": "Vermelho",
-      "km": 9026762,
-      "price": 7890.22
+      "km": 902676,
+      "price": 7890
     },
     {
-      "title": "celtinha",
-      "model": "Celta",
-      "year": "2005",
-      "color": "sd",
-      "km": "209022",
-      "price": "8762.22",
+      "title": "C3 vermelho 2010",
+      "model": "C3",
+      "year": "2010",
+      "color": "vermelho",
+      "km": 209022,
+      "price": 12300,
       "brand": "Chevrolet",
       "id": 6
     },
     {
-      "title": "title test",
-      "model": "sad",
-      "year": "sad",
-      "color": "asd",
-      "km": "asd",
-      "price": "asd",
-      "brand": "sdad",
+      "title": "Hilux prata",
+      "model": "Hilux",
+      "year": "2015",
+      "color": "Prata",
+      "km": 30200,
+      "price": 45000,
+      "brand": "Honda",
       "id": 7
+    },
+    {
+      "title": "HB20 branco",
+      "model": "HB20",
+      "year": "2012",
+      "color": "Branco",
+      "km": 20000,
+      "price": 20500,
+      "brand": "Hyundai",
+      "id": 8
     }
   ]
 }

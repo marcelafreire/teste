@@ -23,7 +23,7 @@ const CarSeachList = ({ cars, handleSearch, search }) => {
                     </div>
 
                     <div className="search-list__group2">
-                      <h3>price{car.price}</h3>
+                      <h3>R${car.price}</h3>
                       <p>{car.year}</p>
                     </div>
                   </Link>
