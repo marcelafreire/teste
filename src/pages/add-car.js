@@ -64,7 +64,7 @@ const AddCar = () => {
         />
 
         <input
-        placeholder="Marca"
+        placeholder="Modelo"
           type="text"
           name="model"
           value={car.model}
@@ -81,7 +81,7 @@ const AddCar = () => {
           onChange={handleChange}
         />
           <input className="form__input-brand"
-          placeholder="Modelo"
+          placeholder="Marca"
           type="text"
           name="brand"
           value={car.brand}
