@@ -1,3 +1,29 @@
+# Teste de desenvolvimento TradersClub
+
+## Instalação
+
+ - Faça o download do repositório e instale o gerenciador de pacotes npm.
+
+```
+npm install
+```
+
+## Instruções
+
+- Inicie a API na porta 4000
+
+```
+json-server -p 4000 db.json
+```
+
+- Para rodar a aplicação, execute npm start
+
+```
+npm start
+```
+
+
+
 # TradersClub
 
 Primeiramente, parabéns por atingir nossos requisitos iniciais.
