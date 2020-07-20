@@ -30,15 +30,15 @@ body {
 //media query 
 @mixin respond($breakpoint) {
     @if $breakpoint == phone {
-        @media (max-width: 37.5em) { @content }; 
+        @media (max-width: 360px) { @content }; 
     }
     @if $breakpoint == tab-port {
-        @media (min-width: 37.6em) { @content }; 
+        @media (max-width: 768px) { @content }; 
     }
     @if $breakpoint == tab-land {
-        @media (max-width: 75em) { @content }; 
+        @media (max-width: 1024px) { @content }; 
     }
     @if $breakpoint == big-desktop {
-        @media (min-width: 112.5em) { @content }; 
+        @media (min-width: 1440px) { @content }; 
     }
 }

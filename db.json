@@ -1,15 +1,6 @@
 {
   "cars": [
     {
-      "title": "Celta Azul 2005 Ar e Direção",
-      "model": "Celta",
-      "brand": "Chevrolet",
-      "year": 2005,
-      "color": "Azul marinho",
-      "km": 106041,
-      "id": 1
-    },
-    {
       "title": "Celta Preto 2003",
       "model": "Celta",
       "brand": "Chevrolet",

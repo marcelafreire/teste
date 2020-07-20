@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 
 const SearchBar = ({ cars, handleSearch, search }) => {
   return (
@@ -10,8 +12,9 @@ const SearchBar = ({ cars, handleSearch, search }) => {
           placeholder="Pesquisar por um veículo"
           onChange={handleSearch}
         />
-        <button>Cadastrar</button>
-      </header>
+        <Link to='/car/add'>Cadastrar</Link>
+        
+              </header>
   );
 };
 

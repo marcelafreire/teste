@@ -9,7 +9,7 @@ const CarSeachList = ({ cars, handleSearch, search }) => {
           <h1>Pesquisa de veículos do TradersClub</h1>
         </div>
       ) : (
-        <div className="home__content__car-list">
+        <div className="home__content__cars">
           {cars
             .filter((car) => car.title.toLowerCase().includes(search))
             .map((car) => {

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import SearchBar from "../components/search-bar";
+import { Link } from "react-router-dom";
+
 
 
 const AddCar = () => {
@@ -10,6 +12,7 @@ const AddCar = () => {
     model: "",
     year: "",
     color: "",
+    brand: "",
     km: "",
     price: "",
   });
@@ -39,8 +42,17 @@ const AddCar = () => {
   return (
     <div className="main-home">
     <SearchBar />
+    <div className="home__content__cars">
       <h1>Adicionar novo Carro</h1>
-      <form>
+      <div>
+      {msgSuccess && (
+              <span className="msg">
+                Carro adicionado com sucesso!
+              </span>
+            )}
+
+      </div>
+      <form className="form">
         <input
         placeholder="Título"
         id="title"
@@ -54,25 +66,25 @@ const AddCar = () => {
         <input
         placeholder="Marca"
           type="text"
-          name="brand"
-          value={car.brand}
+          name="model"
+          value={car.model}
           required
           onChange={handleChange}
         />
 
         <input
         placeholder="Ano"
-          type="text"
+          type="number"
           name="year"
           value={car.year}
           required
           onChange={handleChange}
         />
-          <input
+          <input className="form__input-brand"
           placeholder="Modelo"
           type="text"
-          name="model"
-          value={car.model}
+          name="brand"
+          value={car.brand}
           required
           onChange={handleChange}
         />
@@ -88,7 +100,7 @@ const AddCar = () => {
 
         <input
         placeholder="preço"
-          type="text"
+          type="number"
           name="price"
           value={car.price}
           required
@@ -97,24 +109,20 @@ const AddCar = () => {
 
         <input
           placeholder="Kilometragem"
-          type="text"
+          type="number"
           name="km"
           value={car.km}
           required
           onChange={handleChange}
         />
-        <button>Cancelar</button>
+         <div className="form__btn">
+         <Link to="/">Cancelar</Link>
         <div>
-        <button onClick={handleSubmit}>Salvar</button>
+        <button className="btn-salvar" onClick={handleSubmit}>Salvar</button>
+        </div>
         </div>
       </form>
-
-      {msgSuccess && (
-              <span className="login__error" data-testid="user-error">
-                Carro adicionado com sucesso!
-              </span>
-            )}
-
+    </div>
     </div>
   );
 };
